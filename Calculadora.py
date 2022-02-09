@@ -1,17 +1,16 @@
-from cgitb import text
 from tkinter import *
 
 ventana = Tk()
 ventana.title('Calculadora')
 ventana.config(bg='#b45f6a')
-ventana.geometry("490x415")
+ventana.geometry("312x430")
 ventana.resizable(False,False)
 ventana.attributes('-toolwindow', 'True')
 
 i = 0
 
 #Entrada
-e_texto = Entry(ventana, font=('04b 14'), bg='#d29fa6', fg='#65000d', borderwidth=5)
+e_texto = Entry(ventana, font=('Impact', 12, 'bold'), bg='#d29fa6', fg='#65000d', borderwidth=5)
 e_texto.grid(row=0, column=0, columnspan=4, padx=50, pady=5)
 
 #Funciones
@@ -32,27 +31,27 @@ def calculo():
 	i = 0
 
 #Botones
-boton1 = Button(ventana, text='1', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(1))
-boton2 = Button(ventana, text='2', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(2))
-boton3 = Button(ventana, text='3', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(3))
-boton4 = Button(ventana, text='4', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(4))
-boton5 = Button(ventana, text='5', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(5))
-boton6 = Button(ventana, text='6', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(6))
-boton7 = Button(ventana, text='7', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(7))
-boton8 = Button(ventana, text='8', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(8))
-boton9 = Button(ventana, text='9', font=('04b 14'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(9))
-boton0 = Button(ventana, text='0', font=('04b 14'), width=13, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(0))
+boton1 = Button(ventana, text='1', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(1))
+boton2 = Button(ventana, text='2', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(2))
+boton3 = Button(ventana, text='3', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(3))
+boton4 = Button(ventana, text='4', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(4))
+boton5 = Button(ventana, text='5', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(5))
+boton6 = Button(ventana, text='6', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(6))
+boton7 = Button(ventana, text='7', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(7))
+boton8 = Button(ventana, text='8', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(8))
+boton9 = Button(ventana, text='9', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(9))
+boton0 = Button(ventana, text='0', font=('Impact', 12, 'bold'), width=13, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(0))
 
-boton_borrar = Button(ventana, text='AC', font=('04b 14'), width=5, height=2, bg='#65000d', fg='#d29fa6', borderwidth=8, command=lambda: borrar())
-boton_parentesis1 = Button(ventana, text='(', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('('))
-boton_parentesis2 = Button(ventana, text=')', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(')'))
-boton_punto = Button(ventana, text='.', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('.'))
+boton_borrar = Button(ventana, text='AC', font=('Impact', 12, 'bold'), width=5, height=2, bg='#65000d', fg='#d29fa6', borderwidth=8, command=lambda: borrar())
+boton_parentesis1 = Button(ventana, text='(', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('('))
+boton_parentesis2 = Button(ventana, text=')', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(')'))
+boton_punto = Button(ventana, text='.', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('.'))
 
-boton_div = Button(ventana, text='/', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('/'))
-boton_mult = Button(ventana, text='*', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('*'))
-boton_sum = Button(ventana, text='+', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('+'))
-boton_rest = Button(ventana, text='-', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('-'))
-boton_igual = Button(ventana, text='=', font=('04b 14'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: calculo())
+boton_div = Button(ventana, text='/', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('/'))
+boton_mult = Button(ventana, text='*', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('*'))
+boton_sum = Button(ventana, text='+', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('+'))
+boton_rest = Button(ventana, text='-', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('-'))
+boton_igual = Button(ventana, text='=', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: calculo())
 
 #Posicionar Botones
 boton_borrar.grid(row=1, column=0, padx=5, pady=5)
