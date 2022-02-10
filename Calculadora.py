@@ -24,34 +24,47 @@ def borrar():
 	i = 0
 
 def calculo():
+	global i
 	ecuacion = e_texto.get()
-	resultado = eval(ecuacion)
+	resultado = str(eval(ecuacion))
 	e_texto.delete(0, END)
 	e_texto.insert(0, resultado)
-	i = 0
+
+class HoverButton(Button):
+	def __init__(self, master, **kw):
+		Button.__init__(self,master=master,**kw)
+		self.defaultBackground = self["background"]
+		self.bind("<Enter>", self.on_enter)
+		self.bind("<Leave>", self.on_leave)
+
+	def on_enter(self, e):
+		self["background"] = self["activebackground"]
+
+	def on_leave(self, e):
+		self["background"] = self.defaultBackground
 
 #Botones
-boton1 = Button(ventana, text='1', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(1))
-boton2 = Button(ventana, text='2', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(2))
-boton3 = Button(ventana, text='3', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(3))
-boton4 = Button(ventana, text='4', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(4))
-boton5 = Button(ventana, text='5', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(5))
-boton6 = Button(ventana, text='6', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(6))
-boton7 = Button(ventana, text='7', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(7))
-boton8 = Button(ventana, text='8', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(8))
-boton9 = Button(ventana, text='9', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(9))
-boton0 = Button(ventana, text='0', font=('Impact', 12, 'bold'), width=13, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(0))
+boton1 = HoverButton(ventana, text='1', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(1))
+boton2 =HoverButton(ventana, text='2', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(2))
+boton3 =HoverButton(ventana, text='3', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(3))
+boton4 =HoverButton(ventana, text='4', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(4))
+boton5 =HoverButton(ventana, text='5', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(5))
+boton6 =HoverButton(ventana, text='6', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(6))
+boton7 =HoverButton(ventana, text='7', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(7))
+boton8 =HoverButton(ventana, text='8', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(8))
+boton9 =HoverButton(ventana, text='9', font=('Impact', 12, 'bold'), width=5, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(9))
+boton0 =HoverButton(ventana, text='0', font=('Impact', 12, 'bold'), width=13, height=2, bg='#a53f4d', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(0))
 
-boton_borrar = Button(ventana, text='AC', font=('Impact', 12, 'bold'), width=5, height=2, bg='#65000d', fg='#d29fa6', borderwidth=8, command=lambda: borrar())
-boton_parentesis1 = Button(ventana, text='(', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('('))
-boton_parentesis2 = Button(ventana, text=')', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(')'))
-boton_punto = Button(ventana, text='.', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('.'))
+boton_borrar =HoverButton(ventana, text='AC', font=('Impact', 12, 'bold'), width=5, height=2, bg='#65000d', fg='#d29fa6', borderwidth=8, command=lambda: borrar())
+boton_parentesis1 =HoverButton(ventana, text='(', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('('))
+boton_parentesis2 =HoverButton(ventana, text=')', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton(')'))
+boton_punto =HoverButton(ventana, text='.', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('.'))
 
-boton_div = Button(ventana, text='/', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('/'))
-boton_mult = Button(ventana, text='*', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('*'))
-boton_sum = Button(ventana, text='+', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('+'))
-boton_rest = Button(ventana, text='-', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('-'))
-boton_igual = Button(ventana, text='=', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: calculo())
+boton_div =HoverButton(ventana, text='/', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('/'))
+boton_mult =HoverButton(ventana, text='*', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('*'))
+boton_sum =HoverButton(ventana, text='+', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('+'))
+boton_rest =HoverButton(ventana, text='-', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: click_boton('-'))
+boton_igual =HoverButton(ventana, text='=', font=('Impact', 12, 'bold'), width=5, height=2, bg='#961f2f', fg='#d29fa6', borderwidth=8, command=lambda: calculo())
 
 #Posicionar Botones
 boton_borrar.grid(row=1, column=0, padx=5, pady=5)
